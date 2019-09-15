@@ -1,1 +1,5 @@
 main
+out
+.*.swp
+.*.swo
+*.o
