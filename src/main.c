@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <ncurses.h>
 
-#include <ui/display.h>
+#include "ui/display.h"
 #include "shapes.h"
-
+#include "world/world.h"
 
 int main(int argc, char** argv)
 {
@@ -12,6 +12,9 @@ int main(int argc, char** argv)
 
     Display_Init();
 
+    World* world = World_Create();
+    World_Generate(world);
+
     printw("Hello world! I'm %s", "a simple test");
     getch();    //Waits for a char to be entered
     drawSquare(10,10,6,'#');
@@ -19,6 +22,7 @@ int main(int argc, char** argv)
     drawBox(30,30,10,'#');
     getch();
 
+    World_Destroy(world);
     Display_Destroy();
 
     return 0;
