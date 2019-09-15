@@ -16,7 +16,7 @@ DEPEXT = d
 LIBDIR = lib
 LIBS   = -lncurses
 
-CFLAGS = -ggdb -std=c11 -Wall -Wextra -Werror -pedantic -m64
+CFLAGS = -std=c11 -Wall -Wextra -Werror -pedantic -m64
 
 CINCS = -Isrc
 
@@ -27,7 +27,13 @@ COBJ := $(patsubst $(SRCDIR)/%,$(OUTDIR)/%,$(CSRC:.$(SRCEXT)=.$(OBJEXT)))
 # COMPILE STUFF
 #
 
-all: resources $(EXEC)
+all: debug
+
+debug: CFLAGS += -ggdb
+debug: resources $(EXEC)
+
+release: CFLAGS += -O2
+release: resources $(EXEC)
 
 resources: directories
 
@@ -43,12 +49,12 @@ cleaner: clean
 #@$(RM) -rf $(EXECDIR)
 
 $(EXEC): $(COBJ)
-	@$(CC) -o $(EXECDIR)/$(EXEC) $^ $(LIBS)
+	$(CC) -o $(EXECDIR)/$(EXEC) $^ $(LIBS)
 
 $(OUTDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(CINCS) -c -o $@ $<
-	@$(CC) $(CFLAGS) $(INCDEP) -MM $(SRCDIR)/$*.$(SRCEXT) > $(OUTDIR)/$*.$(DEPEXT)
+	$(CC) $(CFLAGS) $(CINCS) -c -o $@ $<
+	$(CC) $(CFLAGS) $(INCDEP) -MM $(SRCDIR)/$*.$(SRCEXT) > $(OUTDIR)/$*.$(DEPEXT)
 	@cp -f $(OUTDIR)/$*.$(DEPEXT) $(OUTDIR)/$*.$(DEPEXT).tmp
 	@sed -e 's|.*:|$(OUTDIR)/$*.$(OBJEXT):|' < $(OUTDIR)/$*.$(DEPEXT).tmp > $(OUTDIR)/$*.$(DEPEXT)
 	@sed -e 's/.*://' -e 's/\\$$//' < $(OUTDIR)/$*.$(DEPEXT).tmp | fmt -1 | sed -e 's/^ *//' -e 's/$$/:/' >> $(OUTDIR)/$*.$(DEPEXT)
