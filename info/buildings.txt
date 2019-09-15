@@ -1,0 +1,33 @@
+UNITS ARE IN CHARACTERS
+
+1 character = 10 feet
+
+BUILDINGS
+
+
+road 1x1
+
+  |    |
+ -+----+---
+       |
+
+default house = 3x4
+
+hhhh
+hhhh
+hhhh
+
+
+default wall  = 2x(length)
+
+############
+############
+
+default tower = 4x6
+
+
+
+    tttttt
+####tttttt
+####tttttt
+    tttttt
