@@ -1,7 +1,5 @@
 #include "shapes.h"
 
-#include <ncurses.h>
-
 void drawHorz(int x, int y, int size, char symbol)
 {
 	move(x,y);

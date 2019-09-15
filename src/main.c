@@ -1,8 +1,6 @@
-#include "stdio.h"
-#include "shapes.h"
+#include <stdio.h>
 #include <ncurses.h>
-
-
+#include "shapes.h"
 
 
 int main(int argc, char** argv)
