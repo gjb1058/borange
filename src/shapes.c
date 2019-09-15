@@ -1,5 +1,4 @@
-
-
+#include "shapes.h"
 
 void drawHorz(int x, int y, int size, char symbol)
 {
