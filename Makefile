@@ -14,9 +14,9 @@ OBJEXT = o
 DEPEXT = d
 
 LIBDIR = lib
-LIBS   = -lncurses
+LIBS   = -lncurses -lm
 
-CFLAGS = -std=c11 -Wall -Wextra -Werror -pedantic -m64
+CFLAGS = -std=c11 -Wall -Wextra -Werror -pedantic -m64 -fms-extensions
 
 CINCS = -Isrc
 
