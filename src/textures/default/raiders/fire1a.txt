@@ -1,5 +1,15 @@
-  
-  
+FILE:   fire1a.txt
+AUTHOR: gjb1058
+SIZE:   5 x 3
+=====================
   x
-./|\.
+./|\
  '-'
+
+  r  
+GBBBG
+ GGG
+
+  b
+gBBBg
+ ggg

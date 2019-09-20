@@ -22,6 +22,25 @@ enum Colors {
     WHITE       = 15;
 } COLOR;
 
+enum spriteColors {
+    SBLACK          = 'b';
+    SBLUE           = 'B';
+    SGREEN          = 'g';
+    SCYAN           = 'c';
+    SRED            = 'r';
+    SMAGENTA        = 'm';
+    SBROWN          = 'R';
+    SLIGHTGRAY      = 'u';
+    SDARKGRAY       = 'U';
+    SLIGHTBLUE      = 'O';
+    SLIGHTGREEN     = 'i';
+    SLIGHTCYAN      = 'o';
+    SLIGHTRED       = 't';
+    SLIGHTMAGENTA   = 'M';
+    SYELLOW         = 'y';
+    SWHITE          = 'w';
+} SCOLOR;
+
 enum LabTypes {
     MILITARY = 0;
     INDUSTRY = 0;
