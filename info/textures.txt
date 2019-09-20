@@ -1,0 +1,77 @@
+Borange uses a basic system for terminal style graphics that 
+allows you to even create your own textures. This document
+goes over the details and proper procedures used by the game
+to display textures.
+
+
+The Information Section
+
+The information section of the file details the file name,
+the author of the file, and the size of the file. The
+section is then separated from the textures via equal
+signs. This section is specifically 4 lines long.
+
+Information Section Example:
+
+FILE:   cube.txt
+AUTHOR: Billy Cubeman
+SIZE:   3 x 3
+=====================
+
+
+The Texture Section
+
+This section specifies what characters will be displayed
+on the screen. Include spaces for non used area. This
+section should follow immediately after the information
+section, starting on line 5.
+
+Texture Section Example:
+=======================
++-+
+|O|
++-+
+
+The Color Section
+
+The color section specifies the foreground then the 
+background colors that will be displayed for the graphics.
+Each section should be one space apart from the next one.
+For color coding, check types.h for the colors supported
+under the SCOLOR enum.
+
+Texture Section and Color Section Example
+====================
++-+
+|O|
++-+
+
+GGG
+GBG
+GGG
+
+YYY
+YYY
+YYY
+
+
+This creates a box, with a foreground of green and a blue
+center. The background is a solid yellow.
+
+Full Texture File Example:
+
+FILE:   cube.txt
+AUTHOR: Billy Cubeman
+SIZE:   3 x 3
+=====================
++-+
+|O|
++-+
+
+GGG
+GBG
+GGG
+
+YYY
+YYY
+YYY
