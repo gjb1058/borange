@@ -13,12 +13,12 @@ SRCEXT = c
 OBJEXT = o
 DEPEXT = d
 
-LIBDIR = lib
-LIBS   = -lncurses -lm
+LIBDIR = libs
+LIBS   = -L$(LIBDIR) -lncurses -lm -lflecs_static
 
 CFLAGS = -std=c11 -Wall -Wextra -Werror -pedantic -m64 -fms-extensions
 
-CINCS = -Isrc
+CINCS = -Isrc -Ilibs
 
 CSRC := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 COBJ := $(patsubst $(SRCDIR)/%,$(OUTDIR)/%,$(CSRC:.$(SRCEXT)=.$(OBJEXT)))
